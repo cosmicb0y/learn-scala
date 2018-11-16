@@ -1,2 +1,4 @@
-// Say hello to the first argument
-println("Hello, "+ args(0) +"!")
+class helloarg extends App {
+  // Say hello to the first argument
+  println("Hello, " + args(0) + "!")
+}

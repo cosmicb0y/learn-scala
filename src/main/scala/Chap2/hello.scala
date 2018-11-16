@@ -1,1 +1,3 @@
-println("Hello, world, from a script!")
+class hello extends App {
+  println("Hello, world, from a script!")
+}

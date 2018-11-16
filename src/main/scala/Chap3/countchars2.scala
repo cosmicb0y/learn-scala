@@ -1,22 +1,25 @@
 import scala.io.Source
 
-def widthOfLength(s: String) = s.length.toString.length
+class countchars2 extends App {
 
-if (args.length > 0) {
+  def widthOfLength(s: String) = s.length.toString.length
 
-  val lines = Source.fromFile(args(0)).getLines().toList
+  if (args.length > 0) {
 
-  val longestLine = lines.reduceLeft(
-    (a, b) => if (a.length > b.length) a else b
-  )
+    val lines = Source.fromFile(args(0)).getLines().toList
 
-  val maxWidth = widthOfLength(longestLine)
+    val longestLine = lines.reduceLeft(
+      (a, b) => if (a.length > b.length) a else b
+    )
 
-  for (line <- lines) {
-    val numSpaces = maxWidth - widthOfLength(line)
-    val padding = " " * numSpaces
-    println(padding + line.length + " | " + line)
+    val maxWidth = widthOfLength(longestLine)
+
+    for (line <- lines) {
+      val numSpaces = maxWidth - widthOfLength(line)
+      val padding = " " * numSpaces
+      println(padding + line.length + " | " + line)
+    }
   }
+  else
+    Console.err.println("Pleas enter filename")
 }
-else
-  Console.err.println("Pleas enter filename")
